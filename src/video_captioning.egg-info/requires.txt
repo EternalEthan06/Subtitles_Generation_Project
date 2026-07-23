@@ -1,0 +1,11 @@
+openai-whisper
+torch
+ffmpeg-python
+pysrt
+moviepy
+
+[dev]
+pytest
+black
+mypy
+isort

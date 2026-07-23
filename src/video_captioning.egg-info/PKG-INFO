@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: video_captioning
+Version: 0.1.0
+Summary: A project for generating subtitles from videos.
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: openai-whisper
+Requires-Dist: torch
+Requires-Dist: ffmpeg-python
+Requires-Dist: pysrt
+Requires-Dist: moviepy
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: isort; extra == "dev"

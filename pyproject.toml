@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video_captioning"
+version = "0.1.0"
+description = "A project for generating subtitles from videos."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "openai-whisper",
+    "torch",
+    "ffmpeg-python",
+    "pysrt",
+    "moviepy"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "mypy",
+    "isort"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["video_captioning*"]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
