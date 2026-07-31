@@ -34,6 +34,8 @@ def process_video(video_path: str):
 
         print(f"\n--- Pipeline Complete! Your subtitles are ready at: {output_srt_path} ---")
 
+        return output_srt_path
+    
     finally:
         # CLEANUP: Delete the temporary .wav file do we don't clog up the hard drive
         if os.path.exists(temp_audio_path):
@@ -50,4 +52,3 @@ if __name__ == "__name__":
         process_video(my_video)
     else:
         print(f"Please put a video file named {my_video} in the correct folder to test the pipeline!")
-        
