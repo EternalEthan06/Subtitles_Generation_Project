@@ -3,6 +3,9 @@ torch
 ffmpeg-python
 pysrt
 moviepy
+fastapi
+uvicorn
+python-multipart
 
 [dev]
 pytest

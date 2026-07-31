@@ -9,6 +9,9 @@ Requires-Dist: torch
 Requires-Dist: ffmpeg-python
 Requires-Dist: pysrt
 Requires-Dist: moviepy
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: python-multipart
 Provides-Extra: dev
 Requires-Dist: pytest; extra == "dev"
 Requires-Dist: black; extra == "dev"

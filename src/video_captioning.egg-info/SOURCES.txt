@@ -14,9 +14,11 @@ src/video_captioning/api/routes/summarise.py
 src/video_captioning/api/routes/translate.py
 src/video_captioning/core/__init__.py
 src/video_captioning/core/captioner.py
+src/video_captioning/core/pipeline.py
 src/video_captioning/core/summariser.py
 src/video_captioning/core/translator.py
 src/video_captioning/models/__init__.py
+src/video_captioning/models/transcriber.py
 src/video_captioning/models/audio/asr_interface.py
 src/video_captioning/models/audio/asr_model.py
 src/video_captioning/models/language/decoder.py
@@ -25,9 +27,11 @@ src/video_captioning/models/vision/encoder.py
 src/video_captioning/models/vision/frame_sampler.py
 src/video_captioning/postprocessing/__init__.py
 src/video_captioning/postprocessing/srt_formatter.py
+src/video_captioning/postprocessing/subtitle_generator.py
 src/video_captioning/postprocessing/timestamp_aligner.py
 src/video_captioning/postprocessing/vtt_formater.py
 src/video_captioning/preprocessing/__init__.py
+src/video_captioning/preprocessing/audio.py
 src/video_captioning/preprocessing/audio_extractor.py
 src/video_captioning/preprocessing/frame_extractor.py
 src/video_captioning/preprocessing/validators.py
