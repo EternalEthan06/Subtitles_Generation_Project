@@ -10,6 +10,9 @@ from video_captioning.core.pipeline import process_video
 app = FastAPI(title = "AI Subtitles API")
 
 # Tell the server to listen for POST requests at the "/upload" URL
+# The "@" symbol is called a "Decorator". 
+# It acts like a traffic cop. It tells the server: "If anyone on the 
+# internet sends data (POST) to ourwebsite.com/upload, send them to the function below!"
 @app.post("/upload")
 # 'async' means this function can pause and let other users use the 
 # website while it waits for things to finish.
