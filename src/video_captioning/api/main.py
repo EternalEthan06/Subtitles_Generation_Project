@@ -11,11 +11,17 @@ app = FastAPI(title = "AI Subtitles API")
 
 # Tell the server to listen for POST requests at the "/upload" URL
 @app.post("/upload")
+# 'async' means this function can pause and let other users use the 
+# website while it waits for things to finish.
+# 'UploadFile = File(...)' is FastAPI magic. It automatically catches 
+# the incoming video from the internet and prepares it for us to use.
 async def upload_video(video: UploadFile = File(...)):
     print(f"Received video: {video.filename}")
 
     # 1. Save the uploaded video from the internet onto server's hard drive
     temp_video_path = f"temp_{video.filename}"
+    #  We create an empty file on our hard drive. "wb" stands for "Write Binary".
+    # (Because videos are binary data, not text).
     with open(temp_video_path, "wb") as buffer:
         # We use shutil to copy the file data securely
         shutil.copyfileobj(video.file, buffer)
