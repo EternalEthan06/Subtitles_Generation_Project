@@ -23,7 +23,7 @@ def extract_audio(video_path: str, output_audio_path: str) -> str:
         # 'overwrite_output()' ensures we don't get an error if the .wav fiel already exists.
         # 'run(quiet=True)' executes the command without flooding the terminal with logs.
 
-        ffmpeg.run(ffmpeg.overwrite_output(stream), quite=True)
+        ffmpeg.run(ffmpeg.overwrite_output(stream), quiet=True)
 
         print(f"Success! Audio saved to {output_audio_path}")
         return output_audio_path

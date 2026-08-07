@@ -43,12 +43,12 @@ def process_video(video_path: str):
             os.remove(temp_audio_path)
 
 # --- Testing Block ---
-if __name__ == "__name__":
+if __name__ == "__main__":
     # Point this to a REAL video file your computer to test the whole system
     # Make sure to use forward slashes (/) or double backslashes (\\) in the path.
     my_video = "../../test_video.mp4"
 
-    if os.path.exist(my_video):
+    if os.path.exists(my_video):
         process_video(my_video)
     else:
         print(f"Please put a video file named {my_video} in the correct folder to test the pipeline!")
