@@ -7,6 +7,7 @@ src/video_captioning.egg-info/dependency_links.txt
 src/video_captioning.egg-info/requires.txt
 src/video_captioning.egg-info/top_level.txt
 src/video_captioning/api/__init__.py
+src/video_captioning/api/main.py
 src/video_captioning/api/middleware.py
 src/video_captioning/api/schemas.py
 src/video_captioning/api/routes/caption.py
