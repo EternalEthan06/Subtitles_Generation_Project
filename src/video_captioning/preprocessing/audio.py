@@ -1,5 +1,6 @@
 import ffmpeg
 import os
+import imageio_ffmpeg
 
 def extract_audio(video_path: str, output_audio_path: str) -> str:
     """
@@ -12,6 +13,9 @@ def extract_audio(video_path: str, output_audio_path: str) -> str:
     print(f"Extracting audio from {video_path}...")
 
     try:
+        # Dynamically locate the bundled FFmpeg executable binary path from imageio-ffmpeg
+        ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
+
         # Use ffmpeg to read the input video
         stream = ffmpeg.input(video_path)
 
@@ -23,7 +27,7 @@ def extract_audio(video_path: str, output_audio_path: str) -> str:
         # 'overwrite_output()' ensures we don't get an error if the .wav fiel already exists.
         # 'run(quiet=True)' executes the command without flooding the terminal with logs.
 
-        ffmpeg.run(ffmpeg.overwrite_output(stream), quiet=True)
+        ffmpeg.run(ffmpeg.overwrite_output(stream), cmd=ffmpeg_exe, quiet=True)
 
         print(f"Success! Audio saved to {output_audio_path}")
         return output_audio_path

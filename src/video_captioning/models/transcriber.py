@@ -1,5 +1,21 @@
+import os
+import sys
+import shutil
+import imageio_ffmpeg
 import whisper
 import torch
+
+# --- Windows Compatibility Helper ---
+# OpenAI Whisper internally executes subprocess commands looking specifically for 'ffmpeg.exe'.
+# We automatically copy imageio's bundled FFmpeg binary into the virtual environment's Scripts
+# directory so Whisper finds 'ffmpeg.exe' seamlessly on Windows without manual PATH editing.
+_ffmpeg_src = imageio_ffmpeg.get_ffmpeg_exe()
+_ffmpeg_dst = os.path.join(sys.prefix, "Scripts", "ffmpeg.exe")
+if not os.path.exists(_ffmpeg_dst) and os.path.exists(_ffmpeg_src):
+    try:
+        shutil.copyfile(_ffmpeg_src, _ffmpeg_dst)
+    except Exception:
+        pass
 
 def transcribe_audio(audio_path: str, model_size: str = "base"):
     """
